@@ -1,40 +1,4 @@
-<?php
 
-$host="localhost";
-$user="root";
-$password="";
-$db="demo";
-
-$sqli=mysqli_connect($host,$user,$password,$db,"3306");
-
-
-if(isset($_POST['username'])){
-    $uname=$_POST['username'];
-    $password=$_POST['password'];
-
-    $sql="select * from Login where User='".$uname."'AND Pass='".$password."' limit 1";
-
-    $result=mysqli_query($sqli,$sql);
-
-    if(mysqli_num_rows($result)==1){
-        echo "You have successfully logged in";
-        exit();
-    }
-    else{
-    echo " You have entered incorrect pasword ";
-    exit();
-}
-
-
-}
-
-
-
-
-
-
-
-?>
 
 
 <html>   
